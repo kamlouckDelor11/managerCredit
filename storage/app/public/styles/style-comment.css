@@ -1,0 +1,306 @@
+.show-comment-container{
+    position: fixed;
+    background: rgba(228, 228, 231, 0.89);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+.show-comment-container.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.show-comment{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ height: 100%;
+
+}
+
+.show-content{
+    width: 100%;
+    height: 100%;
+    max-width: 655px;
+    max-height: 400px;
+    background: #99bbe8;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+    padding: 10px;
+}
+/* .nb-comment{
+    display: inline-block;
+    color: #fff;
+    border-radius: 50%;
+    background: #dc3545;
+    width: 25px;
+    height: 25px;
+    position: relative;
+    transform: translateY(25%);
+    display: inline-block;
+} */
+
+/* .nbComment{
+    position: absolute;
+    top: 25%;
+    font-size: 12px;
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+    
+} */
+
+
+
+.i-user-icon{
+    font-size: 15px;
+    border-radius: 50%;
+}
+
+.user-icon{
+    display: flex;
+    /* align-items: center; */
+}
+.container-comment{
+    border: dotted 1px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(228, 228, 231, 0.315);
+    color: rgb(23, 127, 76);
+}
+
+.othor-comment{
+    font-weight: bold;
+    display: inline-block;
+
+}
+
+.content-comment{
+    margin: 5px;
+}
+
+
+.profile-picture-comment{
+    width: 50px;
+    height: 50px;
+
+}
+.profile-picture-comment img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+/* .btn-comment{
+    background: none;
+    float:right;
+} */
+
+
+/* ===========================================OPINIONS================================================ */
+.show-opinion-container{
+    position: fixed;
+    background: rgba(228, 228, 231, 0.89);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+.show-opinion-container.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+
+/* ===========================================CAUTION================================================ */
+.show-caution-container{
+    position: fixed;
+    background: rgba(228, 228, 231, 0.89);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+.show-caution-container.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.show-caution{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+
+.container-caution{
+    border: dotted 1px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(228, 228, 231, 0.315);
+    color: rgb(23, 127, 76);
+}
+
+.contain-add-caution{
+    position: fixed;
+    background: rgba(228, 228, 231, 0.89);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+    z-index: 1000;
+}
+
+.contain-add-caution.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.form-add-caution {
+    width: 700px;
+    height: 350px;
+    background: #99bbe8;
+}
+
+.form-add-caution select{
+    width: 170px;
+}
+.form-add-caution input{
+    width: 170px;
+}
+
+#form-add-caution{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+/* =========================== GARANTIE =============== */
+
+.show-garantie-container{
+    position: fixed;
+    background: rgba(228, 228, 231, 0.89);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+.show-garantie-container.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.show-garantie{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+}
+
+.container-garantie{
+    border: dotted 1px;
+    padding: 10px;
+    margin-bottom: 20px;
+    background: rgba(228, 228, 231, 0.315);
+    color: rgb(23, 127, 76);
+}
+
+.content-form-add-garantie{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.418);
+    transform: scale(0);
+    transition: transform 1s ease;
+    z-index: 10000;
+}
+
+.content-form-add-garantie.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+#form-add-garantie textarea{
+    width: 100%;
+    outline: none;
+    border: 0.03px solid rgba(193, 237, 245, 0.774);
+    max-width: 477px !important;
+    min-width: 477px !important;
+    color: rgb(23, 127, 76);
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#form-add-garantie{
+    width: 100%;
+}
+#form-add-garantie label{
+    display:inline-block;
+    color: #fff;
+    font-weight: bolder;
+}
+
+/* =====================DECLARATION IMPAYE ==================== */
+
+.content-upaid-declaration{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.897);
+    transform: scale(0);
+    transition: transform 1s ease;
+
+}
+
+.content-upaid-declaration.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+.contain-form-upaid-declaration{
+    background: #99bbe8;
+    width: 500px;
+    padding: 10px;
+}
+
+.upaid-declaration-culum label{
+    width: 150px;
+    color: #fff;
+    font-weight: bolder;
+    display:inline-block; 
+    background: #99bbe8;
+    padding: 10px;
+    border-right: 0.03px solid rgba(193, 237, 245, 0.774);
+
+}
+.upaid-declaration-culum input{
+    width: 150px;
+    font-weight: bolder;
+    display:inline-block;
+    border: none;  
+    background: transparent;
+    padding: 10px;
+    flex: 1;
+    outline: none;
+}
+
+.row-upaid{
+    border: 0.03px solid rgba(193, 237, 245, 0.774);
+    background: #fff;
+    display: flex;
+    margin-bottom: 5px;
+}

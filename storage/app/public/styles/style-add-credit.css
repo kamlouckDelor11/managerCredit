@@ -1,0 +1,96 @@
+.contain-add-credit{
+    position: fixed;
+    background: rgba(228, 228, 231, 0.418);
+    height: 100vh;
+    width: 100%;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+    overflow: scroll;
+}
+.contain-add-credit.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.contain-form-add-credit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.form-add-credit{
+    width: 700px;
+    height: 600px;
+    background: #99bbe8;
+}
+.form-add-credit select{
+    width: 170px;
+}
+.form-add-credit input{
+    width: 170px;
+}
+
+#form-add-credit{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+
+fieldset{
+    border: solid .8px rgba(193, 237, 245, 0.774);
+    padding: 10px;
+    margin-bottom: 10px;
+}
+legend{
+    color: #fff;
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+.row-add-credit{
+    display: flex;
+    padding: 10px;
+    justify-content: space-between;
+}
+
+.culum{
+    background: #fff;
+    border: solid .8px rgba(193, 237, 245, 0.774);
+}
+.culum label{
+    padding: 6px;
+    color: #fff;
+    background: #99bbe8;
+    font-weight: bold;
+    border: solid .8px rgba(193, 237, 245, 0.774);
+    width: 100px !important;
+    display: inline-block;
+}
+.culum input, select{
+    padding: 8px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+.culum select{
+    padding: 10px;
+    font-weight: bold;
+    background: transparent;
+    border: none;
+    outline: none;
+}
+label.select{
+    padding: 10px !important;
+}
+
+button[type='submit']{
+    padding: 10px;
+    background:rgb(23, 127, 76) ;
+    border: solid .8px rgba(193, 237, 245, 0.774);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}

@@ -1,0 +1,53 @@
+/* ==============loader============= */
+
+.loader{
+    position: fixed;
+    z-index: 500000000000;
+    background: rgb(191, 236, 214);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+}
+
+.loading{
+    border: solid 1px #fff;
+    width: 160px;
+    color: rgb(191, 236, 214);
+    font-weight: bold;
+    position: relative;
+    font-size: 20px;
+    padding: 5px;
+}
+
+.loading::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background: rgb(23, 127, 76);
+    left: 0;
+    top: 0;
+
+    animation: loading infinite 5s;
+    z-index: -1;
+}
+
+@keyframes loading {
+    0%{
+        width: 5px;
+    }
+    40%{
+        width: 40%;
+    }
+
+    80%{
+        width: 100%;
+    }
+    100%{
+        width: 5px;
+    }
+    
+}

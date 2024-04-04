@@ -1,0 +1,288 @@
+
+.contain-auth{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    background: #fff;
+    height: 100%;
+}
+
+.contain-title-folder h1{
+    color:rgb(23, 127, 76);
+    text-transform: uppercase;
+    padding: 10px;
+    font-weight: 900;
+    text-align: center;
+}
+
+.row-retail-folder{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    padding: 0 10px;
+    /* border: 0.03px solid rgba(193, 237, 245, 0.774); */
+    margin: 0 5px;
+    
+}
+.row-retail-folder p{
+    padding: 10px;
+}
+
+.culum-retail-folder{
+    width: 50%;
+    text-align: center;
+    border: 0.03px solid rgba(193, 237, 245, 0.774);
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.contain-btn-folder{
+    padding: 10px;
+    margin: 5px;
+}
+
+.row-retail-folder .culum-retail-folder:nth-child(1){
+    text-align: right !important;
+    background: #99bbe8;
+    color: #fff;
+}
+.row-retail-folder .culum-retail-folder:nth-child(1) p::after{
+  content: ':';
+  margin-left: 2px;
+}
+
+.row-retail-folder .culum-retail-folder:nth-child(2){
+   flex: 100%;
+   background: rgba(228, 228, 231, 0.315);
+   color:rgb(23, 127, 76);
+}
+
+.a-donwload{
+    text-transform: lowercase;
+    color: rgb(23, 127, 76) !important;
+}
+
+.fa-download{
+    color: #99bbe8;
+}
+
+.caitenaire-btn{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* ===========================================commentaire=================================================== */
+.content-coment-folder{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.418);
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+
+.content-coment-folder.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.contain-form-coment-folder{
+    background: #99bbe8;
+    width: 500px;
+    padding: 10px;
+}
+
+#coment-folder{
+    width: 100%;
+}
+#coment-folder label{
+    display:inline-block;
+    color: #fff;
+    font-weight: bolder;
+}
+#coment-folder textarea{
+    width: 100%;
+    outline: none;
+    border: 0.03px solid rgba(193, 237, 245, 0.774);
+    max-width: 477px;
+    min-width: 477px;
+    color: rgb(23, 127, 76);
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+
+/* ===========================================avis=================================================== */
+
+.content-opinion-folder{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.418);
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+
+.content-opinion-folder.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.contain-form-coment-folder{
+    background: #99bbe8;
+    width: 500px;
+    padding: 10px;
+}
+
+#opinion-folder textarea{
+    width: 100%;
+    outline: none;
+    border: 0.03px solid rgba(193, 237, 245, 0.774);
+    max-width: 477px;
+    min-width: 477px;
+    color: rgb(23, 127, 76);
+    padding: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+#opinion-folder{
+    width: 100%;
+}
+#opinion-folder label{
+    display:inline-block;
+    color: #fff;
+    font-weight: bolder;
+}
+
+/* ==========================================Gérer le dossier======================================================== */
+.container-manager-folder{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.897);
+    transform: scale(0);
+    transition: transform 1s ease;
+
+}
+
+.container-manager-folder.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.btn-manager-folder button{
+    border: solid .8px rgba(193, 237, 245, 0.774);
+    height: 150px;
+    width: 150px;
+    margin: 10px;
+    background:rgb(23, 127, 76);
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+
+}
+/* ==========================================Gestion impayés======================================================= */
+.container-manager-upaid{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(228, 228, 231);
+    transform: scale(0);
+    transition: transform 1s ease;
+
+}
+
+.container-manager-upaid.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+
+/* ==========================================modifier le statu======================================================== */
+.content-change-status-folder{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.897);
+    transform: scale(0);
+    transition: transform 1s ease;
+
+}
+
+.content-change-status-folder.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.groupe-select-statut-row{
+    background: #fff;
+    margin: 10px 0;
+}
+.groupe-select-statut-row select{
+    background: transparent;
+    width: 100%;
+    border: solid .8px rgba(193, 237, 245, 0.774);
+}
+
+/* ===================================valider====================================================== */
+#form-approuve-credit{
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+}
+.form-approuve-credit{
+    width: 750px;
+    height: 450px;
+    background: #99bbe8;
+}
+
+.form-approuve-credit select{
+    width: 170px;
+}
+.form-approuve-credit input{
+    width: 170px;
+}
+
+.contain-approuve-credit{
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(228, 228, 231, 0.918);
+    transform: scale(0);
+    transition: transform 1s ease;
+}
+
+.contain-approuve-credit.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.number{
+    margin-bottom: 10px;
+}

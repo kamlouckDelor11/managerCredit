@@ -1,0 +1,298 @@
+
+
+/* ==============================style etat des dossiers============================================ */
+
+.contain-sale-log{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fffb;
+    position: fixed;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+    overflow: scroll;
+}
+.contain-sale-log.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.display-sale{
+    background: #99bbe8;
+    padding: 5px;
+    /* height: 550px; */
+    width: 1000px;
+}
+
+
+.display-sale table{
+    width: 100%;
+}
+
+
+.display-sale thead tr th{
+   width: 105px;
+   color: #fff;
+   font-weight: bold;
+   padding: 7px 0;
+}
+.display-sale thead tr th:nth-child(1){
+   width: 30px;
+}
+.display-sale thead tr th:nth-child(2){
+   width: 90px;
+}
+.display-sale thead tr th:nth-child(3){
+   width: 150px;
+
+}
+.display-sale thead tr th:nth-child(6){
+    width: 90px;
+   text-align: center;
+}
+.display-sale thead tr th:nth-child(7){
+   text-align: center;
+}
+.display-sale thead tr th:nth-child(8){
+   text-align: center;
+}
+.display-sale thead tr th:nth-child(9){
+    width: 60px;
+   text-align: center;
+}
+.display-sale tbody tr td{
+   width: 105px;
+   border-right: 0.03px solid rgba(193, 237, 245, 0.774);
+   padding: 7px 0;
+
+}
+.display-sale tbody tr td:nth-child(1){
+   width: 30px;
+}
+.display-sale tbody tr td:nth-child(2){
+   width: 90px;
+   text-align: left;
+}
+.display-sale tbody tr td:nth-child(3){
+   width: 150px;
+   text-transform: uppercase;
+
+}
+.display-sale tbody tr td:nth-child(4){
+    text-align: center;
+
+}
+.display-sale tbody tr td:nth-child(5){
+    text-align: center;
+}
+.display-sale tbody tr td:nth-child(6){
+   text-align: center;
+}
+.display-sale tbody tr td:nth-child(7){
+   text-align: center;
+}
+.display-sale tbody tr td:nth-child(8){
+   text-align: center;
+}
+
+.display-sale tbody tr{
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   flex-wrap: nowrap;
+   border-bottom: 0.03px solid rgba(193, 237, 245, 0.774);
+
+}
+
+.display-sale thead tr{
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   flex-wrap: nowrap;
+   text-align: left;
+   padding-right: 20px;
+}
+
+.display-sale tbody tr:nth-child(even){
+    background: #ddd;
+}
+
+.row-sale-log{
+    background: #f1f1f1;
+}
+
+.display-sale .contain-row-sale-slog {
+    background: #fff;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.groupe-select-sale{
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.display-sale input[type='date']{
+    outline: none;
+    background: transparent;
+    border: none;
+    padding: 7px;
+}
+
+.display-sale select{
+    outline: none;
+    border: none;  
+    background: transparent;
+    padding: 7px;
+}
+
+.display-sale  label{
+    color: #fff;
+    display: inline-block;
+    font-weight: bold;
+    background: #99bbe8;
+    width: 90px;
+    align-items: center;
+    padding: 7px;
+}
+.display-sale  label.label{
+    width: 50px;
+}
+
+.groupe-select-sale-row{
+    background: #fff;
+    border: solid 0.8px rgba(193, 237, 245, 0.774);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.display-sale .groupe-btn-sale button[type='submit']{
+    padding: 8px;
+    border: solid 0.8px rgba(193, 237, 245, 0.774);
+    color: rgb(23, 127, 76);
+    border-radius: 5px;
+    font-weight: 900;
+    cursor: pointer;
+    background-color: rgb(240, 240, 240) !important;
+
+}
+
+
+.display-sale .groupe-btn-sale{
+    padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.display-sale fieldset{
+    border: solid .8px rgba(193, 237, 245, 0.774);
+    padding: 10px !important;
+}
+
+.display-sale legend{
+    color: #fff;
+    padding: 0 5px;
+    font-weight: bold;
+}
+
+
+label.label-amount{
+    width: 60px !important;
+    display: inline-block'
+}
+
+input.input-amount-sale-slog{
+    outline: none;
+    border: none;
+    background: transparent;
+    text-align: center;
+    color: rgb(23, 127, 76);
+    font-weight: 900;
+}
+
+.sum-amount{
+    background: #fff;
+    border:solid 0.8px rgb(157, 240, 212);
+    float: right;
+}
+
+.sum-amount label{
+    width: 150px !important;
+}
+
+/* ============================etat des impayes ========================= */
+.contain-upaid-slog{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fffb;
+    position: fixed;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+    overflow: scroll;
+}
+.contain-upaid-slog.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
+
+.row-upaid{
+    background: #f1f1f1;
+}
+
+.display-sale .contain-row-upaid {
+    background: #fff;
+    height: 300px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+
+.contain-upaid{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fffb;
+    /* position: fixed; */
+    top: 0;
+    /* transform: scale(0); */
+    transition: transform 1s ease;
+}
+
+/* ==========================interroger un pret============ */
+.contain-sale-log-single-loan{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #fffb;
+    position: fixed;
+    top: 0;
+    transform: scale(0);
+    transition: transform 1s ease;
+    overflow: scroll;
+}
+.contain-sale-log-single-loan.active{
+    transform: scale(1);
+    transition: transform 1s ease;
+}
