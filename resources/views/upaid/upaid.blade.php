@@ -64,27 +64,68 @@
                 
             }
         </style>
-        <div class="content-upaid-retail">
-            <div class="contain-retail-upaid">
-                <div class="row-retail-upaid">
-                    <div class="culum-retail-upaid">
-                        <p>Numéro prêt</p>
+        <div class="contain-upaid">
+            <div class="content-upaid-retail">
+                <div class="contain-retail-upaid">
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Nom client</p>
+                        </div>
+                        <div class="culum-retail-upaid">
+                            <p>{{$upaid->credit->custumerName}}</p>
+                        </div>
                     </div>
-                    <div class="culum-retail-upaid">
-                        <p>{{$upaid->numberFolder}}</p>
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Numéro prêt</p>
+                        </div>
+                        <div class="culum-retail-upaid">
+                            <p>{{$upaid->numberFolder}}</p>
+                        </div>
+                    </div>
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Echéance</p>
+                        </div>
+                        <div class="culum-retail-upaid">
+                            <p>{{date('d-m-Y', strtotime($upaid->upaidDate))}}</p>
+                        </div>
+                    </div>
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Montant impayé</p>
+                        </div>
+                        <div class="culum-retail-upaid">@php echo (number_format(intval($upaid->upaidAmount) , 0 , '.', ' '). ' XAF') @endphp</p>
+                        </div>
+                    </div>
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Montant recouuvré</p>
+                        </div>
+                        <div class="culum-retail-upaid">@php echo (number_format(intval($upaid->upaidRecovery) , 0 , '.', ' '). ' XAF') @endphp</p>
+                        </div>
+                    </div>
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Montant à recouuvrer</p>
+                        </div>
+                        <div class="culum-retail-upaid">@php echo (number_format(intval($upaid->upaidAmount - $upaid->upaidRecovery) , 0 , '.', ' '). ' XAF') @endphp</p>
+                        </div>
+                    </div>
+                    <div class="row-retail-upaid">
+                        <div class="culum-retail-upaid">
+                            <p>Téléphone client</p>
+                        </div>
+                        <div class="culum-retail-upaid">@php echo (number_format(intval($upaid->credit->custumerPhoneNumber) , 0 , '.', ' ')) @endphp</p>
+                        </div>
                     </div>
                 </div>
-                <div class="row-retail-upaid">
-                    <div class="culum-retail-upaid">
-                        <p>Echéance</p>
-                    </div>
-                    <div class="culum-retail-upaid">
-                        <p>{{date('d-m-Y', strtotime($upaid->upaidDate))}}</p>
-                    </div>
+                <div class="group-btn-upaid" style="padding: 10px; margin:3px;">
+                    <button type="submit">Recouvrement</button>
+                    <button type="submit">Action Recouvrement</button>
+                    <button type="submit">Document</button>
                 </div>
             </div>
-        </div>
-        <div class="contain-upaid">
             <h3>historique des impayé</h3>
             <div class="contain-display-sale display-sale contain-display-upaid">
                 <div class="display-upaid">
@@ -109,8 +150,8 @@
                                 <tr>
                                     <td>{{$nb}}</td>
                                     <td> {{date('d-m-Y', strtotime($item->upaidDate))}}</td>
-                                    <td>{{$item->upaidAmount}}</td>
-                                    <td>{{$item->upaidRecovery}}</td>
+                                    <td>@php echo (number_format(intval($item->upaidAmount), 0 , '.', ' ')) @endphp</td>
+                                    <td>@php echo (number_format(intval($item->upaidRecovery), 0 , '.', ' ')) @endphp</td>
                                     <td>{{$item->upaidProof}}</td>
                                     @if ($item->status == 0)
                                         <td style="text-align: initial !important">I</td>
