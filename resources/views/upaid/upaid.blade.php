@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css" href="{{URL('storage/styles/style-add-credit.css')}}"> 
     <link rel="stylesheet" type="text/css" href="{{URL('storage/styles/style-laoder.css')}}"> 
     <link rel="stylesheet" type="text/css" href="{{URL('storage/styles/style-show-data.css')}}">  
+    <link rel="stylesheet" type="text/css" href="{{URL('storage/styles/style-folder.css')}}">  
 
 </head>
 <body>
@@ -63,8 +64,218 @@
                 width: 100%;
                 
             }
+
+            .content-form-recouvery-upaid{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(228, 228, 231, 0.897);
+                transform: scale(0);
+                transition: transform 1s ease;
+                z-index: 100;
+            }
+
+            .content-form-recouvery-upaid.active{
+                transform: scale(1);
+                transition: transform 1s ease;
+            }
+            .content-form-recouvery-upaid-action{
+                position: fixed;
+                width: 100%;
+                height: 100vh;
+                top: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: rgba(228, 228, 231, 0.897);
+                transform: scale(0);
+                transition: transform 1s ease;
+                z-index: 100;
+            }
+
+            .content-form-recouvery-upaid-action.active{
+                transform: scale(1);
+                transition: transform 1s ease;
+            }
+
+            .contain-form-recouvery-upaid{
+                background: #99bbe8;
+                width: 400px;
+                padding: 10px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .contain-recovery-upaid{
+                background: #fff;
+                margin-bottom: 5px;
+            }
+            .contain-recovery-upaid input{
+                font-weight: bolder;
+                display:inline-block;
+                border: none;  
+                background: transparent;
+                flex: 1;
+                outline: none; 
+            }
+            .contain-recovery-upaid label{
+                color: #fff;
+                font-weight: bolder;
+                display:inline-block; 
+                background: #99bbe8;
+                padding: 10px;
+                border: 0.03px solid rgba(193, 237, 245, 0.774);
+            }
+            .sub-content-form-upaid{
+                background: #99bbe8;
+                padding: 5px;
+            }
+
+            /* action recouvrement */
+
+            .contain-action-recouvery{
+                position: fixed;
+                background: rgba(228, 228, 231, 0.89);
+                height: 100vh;
+                width: 100%;
+                top: 0;
+                transform: scale(0);
+                transition: transform 1s ease;
+                z-index: 1000;
+            }
+            .contain-action-recouvery.active{
+                transform: scale(1);
+                transition: transform 1s ease;
+            }
+
+            .show-garantie{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%; 
+            }
+
+            .container-garantie{
+                border: dotted 1px;
+                padding: 10px;
+                margin-bottom: 20px;
+                background: rgba(228, 228, 231, 0.315);
+                color: rgb(23, 127, 76);
+            }
+
+            .show-content{
+                width: 100%;
+                height: 100%;
+                max-width: 655px;
+                max-height: 400px;
+                background: #99bbe8;
+                overflow-y: scroll;
+                scrollbar-width: thin;
+                padding: 10px;
+            }
+
         </style>
+        <div class="contain-message-error">
+            <div class="sub-message-error-contain">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p id="error-message-contain-spent-item" draggable="true" class="error-message"></p>
+                <span class="hidde-error-message">OK</span>
+            </div>
+        </div>
         <div class="contain-upaid">
+            {{-- ===========================Formulaire recouvrement============================ --}}
+            <div class="content-form-recouvery-upaid">
+                <div class="close-form close-content-form-recouvery-upaid"><i class="fa-regular fa-circle-xmark"></i></div>
+                    <div class="sub-content-form-upaid">
+                        <fieldset>
+                            <legend>Recouvrement</legend>
+                        <div class="contain-form-recouvery-upaid">
+                            <form action="{{route('upaid.recouvery', $upaid->token)}}" id="form-recouvery-upaid" method="post">
+                                @csrf
+                                <div class="contain-recovery-upaid">
+                                    <label for="amount-recouvery">Montant</label>
+                                    <input name="recouveryUpaid" type="text" id="amount-recouvery" placeholder="Montant recouvré">
+                                </div>
+                                <button type="submit">OK</button>
+                            </form>
+                        </div>
+                        </fieldset>
+                    </div>
+            </div>
+            {{-- ===========================fin Formulaire recouvrement============================ --}}
+            {{-- ===========================Formulaire action recouvrement============================ --}}
+            <div class="content-form-recouvery-upaid-action">
+                <div class="close-form close-content-form-recouvery-upaid-action"><i class="fa-regular fa-circle-xmark"></i></div>
+                    <div class="sub-content-form-upaid">
+                        <fieldset>
+                            <legend>Action recouvrement</legend>
+                        <div class="contain-form-recouvery-upaid">
+                            <form action="{{route('actionRecovery.store', $upaid->token)}}" id="form-recouvery-action" method="post">
+                                @csrf
+                                <div class="contain-recovery-upaid">
+                                    <label for="recouvery-action-object">Objet Doc</label>
+                                    <input name="recouveryUpaidActionObject" type="text" id="recouvery-action-object" placeholder="Objet du document">
+                                </div>
+                                <div class="contain-recovery-upaid">
+                                    <label for="amount-recouvery">Fichier
+                                        <input name="recouveryUpaidActionDoc" type="file" id="recouvery-action-document">
+                                    </label>
+                                </div>
+                                <button type="submit">OK</button>
+                            </form>
+                        </div>
+                        </fieldset>
+                    </div>
+            </div>
+            {{-- ===========================fin Formulaire action recouvrement============================ --}}
+            {{-- ===========================consulter les action de recouvrement============================ --}}
+            <div class="contain-action-recouvery">
+                <div class="close-form close-contain-action-recouvery"><i class="fa-regular fa-circle-xmark"></i></div>
+                <div class="show-garantie">
+                    <div class="show-content">
+                        <fieldset>
+                            <legend>Les actions</legend>
+                            <div class="show-garantie-content">
+                                @php
+                                    $nbAction = 1;
+                                @endphp
+                                @foreach ($actions as $action)
+                                @if ($upaid->token == $action->token_upaid)
+                                <div class="container-garantie">
+                                    <p>{{$nbAction}}</p>
+                                    <div class="row-retail-folder">
+                                        <div class="culum-retail-folder">
+                                            <p>Description</p>
+                                        </div>
+                                        <div class="culum-retail-folder">
+                                            <p>{{$action->title}}</p>                    
+                                        </div>
+                                    </div>
+                                    <div class="row-retail-folder">
+                                        <div class="culum-retail-folder">
+                                            <p>document</p>
+                                        </div>
+                                        <div class="culum-retail-folder">
+                                            <p><a title="Télécharger le fichier" class="a-donwload" href="/storage/document/upaid/{{$action->path}}">{{$action->path}} <i class="fa-solid fa-download"></i></a></p>                    
+                                        </div>
+                                    </div>
+                                </div>
+                                @php
+                                    $nbAction ++;
+                                @endphp
+                                @endif
+                                @endforeach
+                            </div>
+                        </fieldset>
+                    </div>
+                </div>
+            </div>
+            {{-- ===========================fin consultation action de recouvrement============================ --}}
             <div class="content-upaid-retail">
                 <div class="contain-retail-upaid">
                     <div class="row-retail-upaid">
@@ -121,12 +332,14 @@
                     </div>
                 </div>
                 <div class="group-btn-upaid" style="padding: 10px; margin:3px;">
-                    <button type="submit">Recouvrement</button>
-                    <button type="submit">Action Recouvrement</button>
-                    <button type="submit">Document</button>
+                    @if (intval($upaid->upaidAmount) != intval($upaid->upaidRecovery ))
+                    <button type="submit" id="recouvery-upaid-btn">Recouvrement</button>
+                    <button type="submit" id="recouvery-upaid-action-btn">Action Recouvrement</button>
+                    @endif
+                    <button type="submit" id="show-action-recouvery-btn">Voir les actions</button>
                 </div>
             </div>
-            <h3>historique des impayé</h3>
+            <h3>historique des impayés</h3>
             <div class="contain-display-sale display-sale contain-display-upaid">
                 <div class="display-upaid">
                     <table>
@@ -153,10 +366,10 @@
                                     <td>@php echo (number_format(intval($item->upaidAmount), 0 , '.', ' ')) @endphp</td>
                                     <td>@php echo (number_format(intval($item->upaidRecovery), 0 , '.', ' ')) @endphp</td>
                                     <td>{{$item->upaidProof}}</td>
-                                    @if ($item->status == 0)
-                                        <td style="text-align: initial !important">I</td>
-                                    @else
+                                    @if ($item->upaidRecovery == $item->upaidAmount)
                                         <td style="text-align: initial !important">O</td>
+                                    @else
+                                        <td style="text-align: initial !important">I</td>
                                     @endif  
                                     <td><a style="color: rgb(23, 127, 76) !important;" href="{{$item->token}}">Détail</a></td>
                                     @php $nb += 1 @endphp
@@ -202,6 +415,7 @@
     @endguest
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.js"></script>
     <script src="{{URL('storage/scripts/script.js')}}"></script>
+    <script src="{{URL('storage/scripts/script-recouvery.js')}}"></script>
 </body>
 
 </html>

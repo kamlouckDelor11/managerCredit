@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ActionRecouveryController;
 use App\Http\Controllers\CautionController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\CreditController;
@@ -45,3 +46,6 @@ Route::post('garantie/add{credit}',[GarantieController::class, 'store'])->name('
 Route::post('upaid/add{credit}',[UpaidController::class, 'store'])->name('upaid.store');
 Route::post('upaid/display', [UpaidController::class, 'index'])->name('upaid.index');
 Route::get('pret/{upaid}', [UpaidController::class, 'show'])->name('upaid.show');
+Route::post('pret/recouvery/{upaid}', [UpaidController::class, 'recouvery'])->name('upaid.recouvery');
+
+Route::post('upaid/add/action/{upaid}',[ActionRecouveryController::class, 'store'])->name('actionRecovery.store');

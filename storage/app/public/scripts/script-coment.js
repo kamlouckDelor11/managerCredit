@@ -4,7 +4,7 @@
 
 const show_contain_add_coment = document.getElementById('add_coment');
 
-const contain_add_coment = document.getElementsByClassName('content-coment-folder');
+const contain_add_coment = document.getElementsByClassName('content-form-recouvery-upaid');
 const close_contain_add_coment = document.getElementsByClassName('close-content-coment-folder');
 
 if (show_contain_add_coment) {

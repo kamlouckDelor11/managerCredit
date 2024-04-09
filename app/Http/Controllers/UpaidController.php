@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Upaid;
 use App\Http\Requests\StoreUpaidRequest;
 use App\Http\Requests\UpdateUpaidRequest;
+use App\Models\ActionRecouvery;
 use App\Models\Branch;
 use App\Models\Credit;
 use Illuminate\Support\Facades\Auth;
@@ -82,14 +83,46 @@ class UpaidController extends Controller
     }
 
     /**
-     * Display the specified resource.
+     * Display the specified resource. 
      */
     public function show(Upaid $upaid)
     {
         $upaids = Upaid::all()
         ->where('token_branch',$upaid->token_branch)
         ->where('numberFolder',$upaid->numberFolder);
-        return view('upaid.upaid', ['upaid'=>$upaid, 'upaids'=>$upaids] );
+
+        $actonsRecouvery = ActionRecouvery::all();
+        return view('upaid.upaid', ['upaid'=>$upaid, 'upaids'=>$upaids, 'actions'=> $actonsRecouvery] );
+    }
+
+    /**
+     * recouvery upaid.
+     */
+    public function recouvery(Request $request, Upaid $upaid)
+    {
+        $request->validate([
+            'recouveryUpaid'=>'required',
+        ]);
+
+
+            $amountToSubmit = strip_tags(htmlspecialchars(stripslashes($request->recouveryUpaid)));
+
+            $amountRecouvery = $upaid->upaidRecovery;
+
+            $amountToRecovery = intval($amountToSubmit) + intval($amountRecouvery);
+
+
+            if ($amountToRecovery > $upaid->upaidAmount) {
+                return response()->json(['message'=>'Montant trop grand !']);
+                
+            } else {
+                $upaidToRecovery = Upaid::find($upaid->token);
+    
+                $upaidToRecovery->upaidRecovery = $amountToRecovery;
+        
+                $upaidToRecovery->update();
+                return response()->json(['message'=>'Réalisé avec succès !']);
+            }
     }
 
     /**
